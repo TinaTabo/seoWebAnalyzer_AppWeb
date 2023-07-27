@@ -25,3 +25,6 @@ $font-nunito: 'Nunito Sans', sans-serif;
 body {
     font-family: $font-nunito;
 }
+
+//-- Font Awesome - para agregar iconos
+@import '~@fortawesome/fontawesome-free/css/all.css';
