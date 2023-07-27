@@ -6,7 +6,12 @@
     <hr class="historial-divider">
     <div class="historial-item" *ngFor="let item of items">
         <a href="{{item.url}}" class="historial-item-link" target="_blank">{{item.url}}</a>
-        <span class="historial-item-date">{{item.date}}</span>
+        <div class="historial-date-delete">
+            <span class="historial-item-date">{{item.date}}</span>
+            <button class="historial-item-delete"> <!-- Aqui se llamara a la funcion que haga la peticion DELETE -->
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
     </div>
 </div>
 

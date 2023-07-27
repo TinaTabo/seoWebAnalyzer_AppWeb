@@ -32,8 +32,29 @@
             text-decoration: none;
         }
 
-        .historial-item-date {
-            color: $color-veige-oscuro;
+        .historial-date-delete{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 5px;
+
+            .historial-item-date {
+                color: $color-veige-oscuro;
+            }
+
+            .historial-item-delete {
+                background: none;
+                border: none;
+                padding: 0;
+                margin: 0;
+                outline: none;
+                box-shadow: none;
+                cursor: pointer;
+                color: $color-veige-oscuro;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
         }
     }
 
