@@ -1,1 +1,12 @@
-<p>history works!</p>
+<div class="historial-card">
+    <div class="historial-header">
+        <span class="historial-header-item">URL</span>
+        <span class="historial-header-item">ANALYZED AT</span>
+    </div>
+    <hr class="historial-divider">
+    <div class="historial-item" *ngFor="let item of items">
+        <a href="{{item.url}}" class="historial-item-link" target="_blank">{{item.url}}</a>
+        <span class="historial-item-date">{{item.date}}</span>
+    </div>
+</div>
+

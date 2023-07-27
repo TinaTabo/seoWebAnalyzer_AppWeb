@@ -1,0 +1,43 @@
+@import '../../../styles.scss';
+
+.historial-card {
+    width: 70%;
+    margin: 1em auto;
+    padding: 1em;
+    background-color: $color-veige-claro;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .historial-header {
+        display: flex;
+        justify-content: space-between;
+        color: $color-azul-oscuro;
+        font-weight: bold;
+        border-bottom: 1px solid $color-azul-oscuro;
+        padding-bottom: 0.5em;
+    }
+
+    .historial-divider {
+        border-color: $color-azul-oscuro;
+    }
+
+    .historial-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5em 0;
+        border-bottom: 1px solid $color-azul-oscuro;
+
+        .historial-item-link {
+            color: $color-azul-oscuro;
+            text-decoration: none;
+        }
+
+        .historial-item-date {
+            color: $color-veige-oscuro;
+        }
+    }
+
+    .historial-item:last-child {
+        border-bottom: none;
+    }
+}
