@@ -1,0 +1,15 @@
+@import '../../../styles.scss';
+
+.footer {
+    background-color: $color-azul-oscuro;
+    padding: 1em;
+    color: $color-blanco;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.copyright {
+    text-align: right;
+    font-size: 0.8em;
+}

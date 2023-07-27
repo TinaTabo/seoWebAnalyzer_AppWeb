@@ -1,0 +1,29 @@
+@import "src/styles.scss";
+
+header {
+    background-color: $color-azul-oscuro;
+    padding: 15px 0;
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+        h1 {
+            color: $color-blanco;
+            margin: 0;
+            font-size: 1.5em;
+        }
+        nav {
+            a {
+                color: $color-veige-claro;
+                text-decoration: none;
+                margin-left: 50px;
+                font-size: 18px;
+                &:hover {
+                    color: $color-veige-oscuro;
+                }
+            }
+        }
+    }
+}

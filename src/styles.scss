@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+/* Limpiadores: resetean los valores predefinidos de la página*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+//-- Colores principales de la app web
+$color-azul-oscuro:   #116A7B;
+$color-azul-claro:   #C2DEDC;
+$color-veige-claro:   #ECE5C7;
+$color-veige-oscuro:   #CDC2AE;
+$color-blanco:       #FFFFFF;
+
+//-- Fuentes
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap'); //-- Google Fonts
+
+$font-nunito: 'Nunito Sans', sans-serif;
+
+body {
+    font-family: $font-nunito;
+}
