@@ -18,5 +18,9 @@ export class HistoryComponent {
     { url: 'https://www.example9.com', date: '2023-07-21 20:00:00' },
     { url: 'https://www.example10.com', date: '2023-07-21 20:00:00' },
     { url: 'https://www.example11.com', date: '2023-07-21 20:00:00' },
+    { url: 'https://www.example12.com', date: '2023-07-21 20:00:00' },
+    { url: 'https://www.example13.com', date: '2023-07-21 20:00:00' },
+    { url: 'https://www.example14.com', date: '2023-07-21 20:00:00' },
+    { url: 'https://www.example15.com', date: '2023-07-21 20:00:00' }
   ];
 }
