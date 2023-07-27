@@ -1,0 +1,26 @@
+@import '../../../styles.scss';
+
+.welcome-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 86.2vh;
+    width: 100%;
+    padding: 1em;
+    background-color: $color-beige-claro;
+    box-sizing: border-box;
+    text-align: center;
+
+    h1 {
+        font-size: 2em;
+        color: $color-azul-oscuro;
+        margin-bottom: 1em;
+    }
+
+    p {
+        font-size: 1.2em;
+        color: $color-azul-oscuro;
+        margin-bottom: 2em;
+    }
+}

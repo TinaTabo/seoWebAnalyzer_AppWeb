@@ -1,0 +1,11 @@
+@import '../../../styles.scss';
+
+.report{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: $color-azul-claro;
+}

@@ -1,64 +1,76 @@
 @import '../../../styles.scss';
 
-.historial-card {
-    width: 70%;
-    margin: 1em auto;
-    padding: 1em;
-    background-color: $color-veige-claro;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.historial{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
-    .historial-header {
-        display: flex;
-        justify-content: space-between;
+    .historial-title{
+        align-self: center;
         color: $color-azul-oscuro;
-        font-weight: bold;
-        border-bottom: 1px solid $color-azul-oscuro;
-        padding-bottom: 0.5em;
+        font-weight: bolder;
     }
 
-    .historial-divider {
-        border-color: $color-azul-oscuro;
-    }
+    .historial-card {
+        width: 70%;
+        margin: 1em auto;
+        padding: 1em;
+        background-color: $color-beige-claro;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-    .historial-item {
-        display: flex;
-        justify-content: space-between;
-        padding: 0.5em 0;
-        border-bottom: 1px solid $color-azul-oscuro;
-
-        .historial-item-link {
-            color: $color-azul-oscuro;
-            text-decoration: none;
-        }
-
-        .historial-date-delete{
+        .historial-header {
             display: flex;
-            flex-direction: row;
             justify-content: space-between;
-            gap: 5px;
+            color: $color-azul-oscuro;
+            font-weight: bold;
+            border-bottom: 1px solid $color-azul-oscuro;
+            padding-bottom: 0.5em;
+        }
 
-            .historial-item-date {
-                color: $color-veige-oscuro;
+        .historial-divider {
+            border-color: $color-azul-oscuro;
+        }
+
+        .historial-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5em 0;
+            border-bottom: 1px solid $color-azul-oscuro;
+
+            .historial-item-link {
+                color: $color-azul-oscuro;
+                text-decoration: none;
             }
 
-            .historial-item-delete {
-                background: none;
-                border: none;
-                padding: 0;
-                margin: 0;
-                outline: none;
-                box-shadow: none;
-                cursor: pointer;
-                color: $color-veige-oscuro;
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
+            .historial-date-delete{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 5px;
+
+                .historial-item-date {
+                    color: $color-beige-oscuro;
+                }
+
+                .historial-item-delete {
+                    background: none;
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    outline: none;
+                    box-shadow: none;
+                    cursor: pointer;
+                    color: $color-beige-oscuro;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                }
             }
         }
-    }
 
-    .historial-item:last-child {
-        border-bottom: none;
+        .historial-item:last-child {
+            border-bottom: none;
+        }
     }
 }
