@@ -11,6 +11,11 @@ export class AnalyzerService {
 
   //-- URL de la API REST
   private url = "http://localhost:8080/analisis";
+
+  //-- Variable que almacena el último analisis recibido.
+  analysis: PostAnalysisResponse = new PostAnalysisResponse(0,'','','',[],{},false,0,'');
+
+
   constructor(private http: HttpClient) {}
 
   //-- Métodos del servicio (Peticiones HTTP a la API REST)
@@ -27,5 +32,10 @@ export class AnalyzerService {
   //-- POST
   postAnalysis(url: string): Observable<PostAnalysisResponse>{
     return this.http.post<PostAnalysisResponse>(this.url, { url })
+  }
+
+  //-- DELETE
+  deleteAnalysis(id: number): Observable<Object>{
+    return this.http.request('delete', this.url + "/" + id);
   }
 }

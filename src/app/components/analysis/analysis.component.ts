@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostAnalysisResponse } from 'src/app/models/post-analysis-response';
+import { AnalyzerService } from 'src/app/shared/analyzer.service';
 
 @Component({
   selector: 'app-analysis',
@@ -6,29 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./analysis.component.scss']
 })
 export class AnalysisComponent implements OnInit {
-  //-- Datos del analisis de prueba.
-  analysisData: any = {
-    id: 1,
-    url: "http://webdeejemplo.com",
-    title: "Titulo de ejemplo",
-    description: "Ejemplo de descripción",
-    keywords: ["uno", "dos", "tres"],
-    titles: {
-      h1: 2,
-      h2: 3,
-      h3: 5,
-      h4: 9
-    },
-    html5: true,
-    images: 8,
-    createdAt: "2011-10-05T14:48:00.000Z"
-  };
 
-  constructor() {}
+  //-- Variable para transformar el campo titles en un array iterable.
+  transformedTitles: any[] = [];
+
+  constructor(public analysisService: AnalyzerService) {}
 
   ngOnInit(): void {
-    // Convertimos 'titles' a una matriz
-    this.analysisData.titles = Object.entries(this.analysisData.titles).map(([key, value]) => ({key, value}));
+    this.transformedTitles = this.transformObjectToArray(this.analysisService.analysis.titles);
+  }
+
+  private transformObjectToArray(object: {[key: string]: number}): any[] {
+    return Object.entries(object).map(([key, value]) => ({ key, value }));
   }
 }
 

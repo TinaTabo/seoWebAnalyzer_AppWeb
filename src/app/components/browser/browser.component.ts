@@ -15,7 +15,15 @@ export class BrowserComponent {
 
   analyze():void{
     this.analyzerService.postAnalysis(this.url).subscribe((data: any)=>{
-      console.log(data);
+      this.analyzerService.analysis.id = data.id;
+      this.analyzerService.analysis.url = data.url;
+      this.analyzerService.analysis.title = data.title;
+      this.analyzerService.analysis.description = data.description;
+      this.analyzerService.analysis.keywords = data.keywords;
+      this.analyzerService.analysis.titles = data.titles;
+      this.analyzerService.analysis.html5 = data.html5;
+      this.analyzerService.analysis.images = data.images;
+      this.analyzerService.analysis.createdAt = data.createdAt;
     })
     this.router.navigateByUrl('/informes')
   }

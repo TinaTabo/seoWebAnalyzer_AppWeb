@@ -10,7 +10,7 @@
             <a href="{{item.url}}" class="historial-item-link" target="_blank">{{item.url}}</a> <!-- aqui debo eliminar href y sustituilo por (click) que llame a la petición para ver el informe. -->
             <div class="historial-date-delete">
                 <span class="historial-item-date">{{item.createdAt}}</span>
-                <button class="historial-item-delete"> <!-- Aqui se llamara a la funcion que haga la peticion DELETE -->
+                <button class="historial-item-delete" (click)="deleteAnalysis(item.id)">
                     <i class="fas fa-trash-alt"></i>
                 </button>
             </div>
