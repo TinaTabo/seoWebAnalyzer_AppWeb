@@ -1,11 +1,11 @@
 export class PostAnalysisResponse {
-    constructor(id: number,
-                url: string,
-                title: string,
-                description: string,
-                keywords: string[],
-                titles: { [key: string]: number },
-                html5: boolean,
-                images: number,
-                createdAt: string){}
+    constructor(public id: number,
+                public url: string,
+                public title: string,
+                public description: string,
+                public keywords: string[],
+                public titles: { [key: string]: number },
+                public html5: boolean,
+                public images: number,
+                public createdAt: string){}
 }

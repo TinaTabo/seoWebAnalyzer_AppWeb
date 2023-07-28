@@ -1,5 +1,5 @@
 export class GetAnalysisResponse {
-    constructor(id:number,
-                url:String,
-                createdAt:String){}
+    constructor(public id:number,
+                public url:String,
+                public createdAt:String){}
 }
