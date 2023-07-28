@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AnalyzerService } from 'src/app/shared/analyzer.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-history',
@@ -6,21 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./history.component.scss']
 })
 export class HistoryComponent {
-  //-- Datos de prueba
-  items = [
-    { url: 'https://www.example1.com', date: '2023-07-25 10:00:00' },
-    { url: 'https://www.example2.com', date: '2023-07-24 14:00:00' },
-    { url: 'https://www.example3.com', date: '2023-07-23 09:30:00' },
-    { url: 'https://www.example4.com', date: '2023-07-22 16:45:00' },
-    { url: 'https://www.example5.com', date: '2023-07-21 20:00:00' },
-    { url: 'https://www.example7.com', date: '2023-07-21 20:00:00' },
-    { url: 'https://www.example8.com', date: '2023-07-21 20:00:00' },
-    { url: 'https://www.example9.com', date: '2023-07-21 20:00:00' },
-    { url: 'https://www.example10.com', date: '2023-07-21 20:00:00' },
-    { url: 'https://www.example11.com', date: '2023-07-21 20:00:00' },
-    { url: 'https://www.example12.com', date: '2023-07-21 20:00:00' },
-    { url: 'https://www.example13.com', date: '2023-07-21 20:00:00' },
-    { url: 'https://www.example14.com', date: '2023-07-21 20:00:00' },
-    { url: 'https://www.example15.com', date: '2023-07-21 20:00:00' }
-  ];
+  items = [];
+
+  constructor(private analyzerService: AnalyzerService){}
+
+  ngOnInit(): void {
+    this.analyzerService.getAnalisys().subscribe((data: any) =>{
+      const datePipe = new DatePipe('en-US');
+      this.items = data.map(item => ({
+        ...item,
+        createdAt: datePipe.transform(item.createdAt, 'dd/MM/yyyy HH:mm')
+      }));
+    })
+  }
 }
