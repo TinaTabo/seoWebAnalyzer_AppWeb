@@ -1,6 +1,6 @@
 <div class="browser">
-    <input type="text" class="url-input" placeholder="Introduce la URL aquí...">
-    <button class="analyze-button">
+    <input [(ngModel)]="url" type="text" class="url-input" placeholder="Introduce la URL aquí...">
+    <button class="analyze-button" (click)="analyze()">
         <i class="fas fa-chevron-right"></i> ANALIZAR
     </button>
 </div>

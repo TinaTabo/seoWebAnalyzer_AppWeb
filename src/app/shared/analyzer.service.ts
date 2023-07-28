@@ -14,11 +14,18 @@ export class AnalyzerService {
   constructor(private http: HttpClient) {}
 
   //-- Métodos del servicio (Peticiones HTTP a la API REST)
+
+  //-- GET
   getAnalisys(limit: number = null): Observable<GetAnalysisResponse[]>{
     let getUrl = this.url;
     if(limit != null){
         getUrl += '?limit=' + limit;
     }
     return this.http.get<GetAnalysisResponse[]>(getUrl);
+  }
+
+  //-- POST
+  postAnalysis(url: string): Observable<PostAnalysisResponse>{
+    return this.http.post<PostAnalysisResponse>(this.url, { url })
   }
 }
