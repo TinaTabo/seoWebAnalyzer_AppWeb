@@ -13,7 +13,9 @@ export class AnalyzerService {
   private url = "http://localhost:8080/analisis";
 
   //-- Variable que almacena el último analisis recibido.
-  analysis: PostAnalysisResponse = new PostAnalysisResponse(0,'','','',[],{},false,0,'');
+  analysis: PostAnalysisResponse = new PostAnalysisResponse(0,'','','',[],{},false,0,'',false);
+  //-- Variable que almacena el historial de análisis.
+  items: GetAnalysisResponse[] = [];
 
 
   constructor(private http: HttpClient) {}

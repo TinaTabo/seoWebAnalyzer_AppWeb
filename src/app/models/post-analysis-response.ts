@@ -7,5 +7,6 @@ export class PostAnalysisResponse {
                 public titles: { [key: string]: number },
                 public html5: boolean,
                 public images: number,
-                public createdAt: string){}
+                public createdAt: string,
+                public isNew: boolean){}
 }

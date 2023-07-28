@@ -11,28 +11,31 @@ import { GetAnalysisResponse } from 'src/app/models/get-analysis-response';
 export class HistoryComponent {
   items: GetAnalysisResponse[] = [];
 
-  constructor(private analyzerService: AnalyzerService){}
+  constructor(public analyzerService: AnalyzerService){}
 
   ngOnInit(): void {
-    this.getAnalysis();
-  }
-
-  getAnalysis():void{
     this.analyzerService.getAnalisys().subscribe((data: any) =>{
       const datePipe = new DatePipe('en-US');
-      this.items = data.map(item => ({
+      this.analyzerService.items = data.map(item => ({
         ...item,
         createdAt: datePipe.transform(item.createdAt, 'dd/MM/yyyy HH:mm')
       }));
     })
   }
 
+
+  getAnalysis(url:string):void{
+    this.analyzerService.postAnalysis(url).subscribe((data: any) => {
+      this.analyzerService.analysis = {...data};
+    });
+  }
+
+
   deleteAnalysis(id: number):void{
     this.analyzerService.deleteAnalysis(id).subscribe((data: any) => {
-      console.log(data);
       if (data.code == 200) {
         //-- Eliminar el elemento del array de items.
-        this.items = this.items.filter(item => item.id !== id);
+        this.analyzerService.items = this.analyzerService.items.filter(item => item.id !== id);
       }
     })
   }

@@ -6,8 +6,8 @@
             <span class="historial-header-item">ANALYZED AT</span>
         </div>
         <hr class="historial-divider">
-        <div class="historial-item" *ngFor="let item of items">
-            <a href="{{item.url}}" class="historial-item-link" target="_blank">{{item.url}}</a> <!-- aqui debo eliminar href y sustituilo por (click) que llame a la petición para ver el informe. -->
+        <div class="historial-item" *ngFor="let item of analyzerService.items">
+            <a class="historial-item-link" target="_blank" (click)="getAnalysis(item.url)">{{item.url}}</a> <!-- aqui debo eliminar href y sustituilo por (click) que llame a la petición para ver el informe. -->
             <div class="historial-date-delete">
                 <span class="historial-item-date">{{item.createdAt}}</span>
                 <button class="historial-item-delete" (click)="deleteAnalysis(item.id)">
