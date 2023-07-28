@@ -3,10 +3,27 @@
 .analysisPage{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     gap: 30px;
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: $color-azul-claro;
     height: 100vh;
+    .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-bottom: 20px;
+
+        button {
+            padding: 10px 20px;
+            background-color: $color-azul-oscuro;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1em;
+        }
+    }
 }
