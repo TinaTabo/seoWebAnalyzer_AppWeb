@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AnalyzerService } from 'src/app/shared/analyzer.service';
 import { DatePipe } from '@angular/common';
 import { GetAnalysisResponse } from 'src/app/models/get-analysis-response';
+import { PostAnalysisResponse } from 'src/app/models/post-analysis-response';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-history',
@@ -11,7 +13,7 @@ import { GetAnalysisResponse } from 'src/app/models/get-analysis-response';
 export class HistoryComponent {
   items: GetAnalysisResponse[] = [];
 
-  constructor(public analyzerService: AnalyzerService){}
+  constructor(public analyzerService: AnalyzerService, public router: Router){}
 
   ngOnInit(): void {
     this.analyzerService.getAnalisys().subscribe((data: any) =>{
@@ -25,8 +27,9 @@ export class HistoryComponent {
 
 
   getAnalysis(url:string):void{
-    this.analyzerService.postAnalysis(url).subscribe((data: any) => {
+    this.analyzerService.postAnalysis(url).subscribe((data: PostAnalysisResponse) => {
       this.analyzerService.analysis = {...data};
+      this.router.navigateByUrl('analisis');
     });
   }
 

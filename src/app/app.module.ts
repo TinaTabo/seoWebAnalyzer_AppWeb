@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { DatePipe } from '@angular/common';
+import { AnalysisPageComponent } from './pages/analysis-page/analysis-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DatePipe } from '@angular/common';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ReportsComponent
+    ReportsComponent,
+    AnalysisPageComponent
   ],
   imports: [
     BrowserModule,
