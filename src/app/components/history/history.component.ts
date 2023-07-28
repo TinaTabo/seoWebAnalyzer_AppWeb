@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnalyzerService } from 'src/app/shared/analyzer.service';
 import { DatePipe } from '@angular/common';
+import { GetAnalysisResponse } from 'src/app/models/get-analysis-response';
 
 @Component({
   selector: 'app-history',
@@ -8,7 +9,7 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./history.component.scss']
 })
 export class HistoryComponent {
-  items = [];
+  items: GetAnalysisResponse[] = [];
 
   constructor(private analyzerService: AnalyzerService){}
 
