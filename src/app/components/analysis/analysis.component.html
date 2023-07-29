@@ -1,10 +1,10 @@
 <div class="report">
     <h2 class="report-title">Informe del Análisis</h2>
     <div class="analysis">
-        <p class="analysis-url"><strong>URL:</strong> {{analysisService.analysis.url}}</p>
-        <p class="analysis-title"><strong>Título:</strong> {{analysisService.analysis.title}}</p>
-        <p class="analysis-description"><strong>Descripción:</strong> {{analysisService.analysis.description}}</p>
-        <p class="analysis-keywords"><strong>Palabras clave:</strong> {{analysisService.analysis.keywords.join(', ')}}</p>
+        <p class="analysis-url"><strong>URL:</strong> {{analyzerService.analysis.url}}</p>
+        <p class="analysis-title"><strong>Título:</strong> {{analyzerService.analysis.title}}</p>
+        <p class="analysis-description"><strong>Descripción:</strong> {{analyzerService.analysis.description}}</p>
+        <p class="analysis-keywords"><strong>Palabras clave:</strong> {{analyzerService.analysis.keywords.join(', ')}}</p>
 
         <div class="analysis-headings">
             <strong>Encabezados:</strong>
@@ -15,7 +15,10 @@
             </ul>
         </div>
 
-        <p class="analysis-html5"><strong>¿Utiliza HTML5?:</strong> {{analysisService.analysis.html5 ? 'Sí' : 'No'}}</p>
-        <p class="analysis-images"><strong>Número de imágenes:</strong> {{analysisService.analysis.images}}</p>
-        <p class="analysis-created"><strong>Fecha del análisis:</strong> {{analysisService.analysis.createdAt | date:'dd/MM/yyyy HH:mm'}}</p>
+        <p class="analysis-html5"><strong>¿Utiliza HTML5?:</strong> {{analyzerService.analysis.html5 ? 'Sí' : 'No'}}</p>
+        <p class="analysis-images"><strong>Número de imágenes:</strong> {{analyzerService.analysis.images}}</p>
+        <p class="analysis-created"><strong>Fecha del análisis:</strong> {{analyzerService.analysis.createdAt | date:'dd/MM/yyyy HH:mm'}}</p>
+        <button class="analysis-delete" (click)="deleteAnalysis(analyzerService.analysis.id)">
+            <i class="fas fa-trash-alt"></i>
+        </button>
 </div>
