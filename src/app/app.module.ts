@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgxsModule } from '@ngxs/store';
+import { AnalysisState } from './states/analyzerStates';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +33,10 @@ import { AnalysisPageComponent } from './pages/analysis-page/analysis-page.compo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxsModule.forRoot([
+      AnalysisState
+    ])
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
