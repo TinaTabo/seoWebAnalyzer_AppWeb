@@ -23,11 +23,8 @@ export class AnalyzerService {
   //-- Métodos del servicio (Peticiones HTTP a la API REST)
 
   //-- GET
-  getAnalisys(limit: number = null): Observable<GetAnalysisResponse[]>{
-    let getUrl = this.url;
-    if(limit != null){
-        getUrl += '?limit=' + limit;
-    }
+  getAnalisys(limit: number = 15): Observable<GetAnalysisResponse[]>{
+    let getUrl = this.url + '?limit=' + limit;
     return this.http.get<GetAnalysisResponse[]>(getUrl);
   }
 

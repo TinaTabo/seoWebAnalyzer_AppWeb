@@ -10,13 +10,18 @@ import { Router } from '@angular/router';
   templateUrl: './history.component.html',
   styleUrls: ['./history.component.scss']
 })
-export class HistoryComponent {
+export class HistoryComponent implements OnInit {
   items: GetAnalysisResponse[] = [];
+  limit = 15;  //-- Valor por defecto
 
   constructor(public analyzerService: AnalyzerService, public router: Router){}
 
   ngOnInit(): void {
-    this.analyzerService.getAnalisys().subscribe((data: any) =>{
+    this.updateLimit();
+  }
+
+  updateLimit(): void {
+    this.analyzerService.getAnalisys(this.limit).subscribe((data: any) =>{
       const datePipe = new DatePipe('en-US');
       this.analyzerService.items = data.map(item => ({
         ...item,
@@ -25,14 +30,12 @@ export class HistoryComponent {
     })
   }
 
-
   getAnalysis(url:string):void{
     this.analyzerService.postAnalysis(url).subscribe((data: PostAnalysisResponse) => {
       this.analyzerService.analysis = {...data};
       this.router.navigateByUrl('analisis');
     });
   }
-
 
   deleteAnalysis(id: number):void{
     this.analyzerService.deleteAnalysis(id).subscribe((data: any) => {
@@ -43,3 +46,4 @@ export class HistoryComponent {
     })
   }
 }
+

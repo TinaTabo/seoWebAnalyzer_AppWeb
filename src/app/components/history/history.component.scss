@@ -4,6 +4,30 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+
+    .input-limit {
+        width: 70%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 10px;
+
+        label {
+            font-size: 1.1em;
+            color: $color-azul-oscuro;
+        }
+
+        input {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            width: 60px;
+            text-align: center;
+        }
+    }
 
     .historial-title{
         align-self: center;

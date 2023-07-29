@@ -1,5 +1,11 @@
 <div class="historial">
     <h2 class="historial-title">Historial de Consultas</h2>
+
+    <div class="input-limit">
+        <label for="limit">Límite de entradas:</label>
+        <input class="input-limit" type="number" id="limit" [(ngModel)]="limit" (change)="updateLimit()">
+    </div>
+
     <div class="historial-card">
         <div class="historial-header">
             <span class="historial-header-item">URL</span>
