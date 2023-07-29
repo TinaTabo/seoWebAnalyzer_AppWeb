@@ -4,7 +4,13 @@
         <p class="analysis-url"><strong>URL:</strong> {{analyzerService.analysis.url}}</p>
         <p class="analysis-title"><strong>Título:</strong> {{analyzerService.analysis.title}}</p>
         <p class="analysis-description"><strong>Descripción:</strong> {{analyzerService.analysis.description}}</p>
-        <p class="analysis-keywords"><strong>Palabras clave:</strong> {{analyzerService.analysis.keywords.join(', ')}}</p>
+        <p class="analysis-keywords">
+            <strong>Palabras clave:</strong>
+            <span *ngIf="analyzerService.analysis.keywords && analyzerService.analysis.keywords == []; else noKeywords">{{analyzerService.analysis.keywords.join(', ')}}</span>
+            <ng-template #noKeywords>
+                <span> No hay palabras clave disponibles.</span>
+            </ng-template>
+        </p>
 
         <div class="analysis-headings">
             <strong>Encabezados:</strong>

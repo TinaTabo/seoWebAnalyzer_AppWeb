@@ -17,13 +17,15 @@
 
         label {
             font-size: 1.1em;
-            color: $color-azul-oscuro;
+            color: $color-morado;
+            font-weight: bold;
         }
 
         input {
             padding: 5px;
             border: none;
             border-radius: 5px;
+            box-shadow: 0px 2px 6px 0px $color-morado;
             width: 60px;
             text-align: center;
         }
@@ -31,7 +33,8 @@
 
     .historial-title{
         align-self: center;
-        color: $color-azul-oscuro;
+        color: $color-rosa;
+        font-size: 30px;
         font-weight: bolder;
     }
 
@@ -39,31 +42,31 @@
         width: 70%;
         margin: 1em auto;
         padding: 1em;
-        background-color: $color-beige-claro;
+        background: linear-gradient(160deg,$color-morado,$color-rosa,$color-morado);
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
         .historial-header {
             display: flex;
             justify-content: space-between;
-            color: $color-azul-oscuro;
+            color: $color-blanco;
             font-weight: bold;
-            border-bottom: 1px solid $color-azul-oscuro;
+            border-bottom: 1px solid $color-rosa;
             padding-bottom: 0.5em;
         }
 
         .historial-divider {
-            border-color: $color-azul-oscuro;
+            border-color: $color-rosa;
         }
 
         .historial-item {
             display: flex;
             justify-content: space-between;
             padding: 0.5em 0;
-            border-bottom: 1px solid $color-azul-oscuro;
+            border-bottom: 1px solid rgba($color-rosa, 0.6);
 
             .historial-item-link {
-                color: $color-azul-oscuro;
+                color: $color-gris;
                 text-decoration: none;
                 cursor: pointer;
             }
@@ -75,7 +78,7 @@
                 gap: 5px;
 
                 .historial-item-date {
-                    color: $color-beige-oscuro;
+                    color: $color-gris;
                 }
 
                 .historial-item-delete {
@@ -86,7 +89,7 @@
                     outline: none;
                     box-shadow: none;
                     cursor: pointer;
-                    color: $color-beige-oscuro;
+                    color: $color-gris;
                     -webkit-appearance: none;
                     -moz-appearance: none;
                     appearance: none;

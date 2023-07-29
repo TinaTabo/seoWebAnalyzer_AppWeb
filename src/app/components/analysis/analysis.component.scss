@@ -1,19 +1,20 @@
 @import '../../../styles.scss';
 
 .report{
-    color: $color-azul-oscuro;
+    color: $color-rosa;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 
     .analysis {
+        color: $color-blanco;
         width: 50%;
         margin: 1em auto;
         padding: 2em;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        background-color: $color-beige-claro;
+        background: linear-gradient(160deg,$color-morado,$color-rosa,$color-morado);
         font-size: 18px;
         display: flex;
         flex-direction: column;
@@ -26,7 +27,7 @@
 
         .analysis-headings {
             ul {
-                list-style-position: inside; // Puntos de la lista dentro del bloque
+                list-style-position: inside; //-- Puntos de la lista dentro del bloque
                 padding-left: 2em;
             }
         }
@@ -40,11 +41,16 @@
             outline: none;
             box-shadow: none;
             cursor: pointer;
-            color: $color-beige-oscuro;
+            color: $color-gris;
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
             font-size: 17px;
         }
     }
+}
+
+strong{
+    color: $color-blanco;
+    text-decoration: underline;
 }

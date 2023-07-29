@@ -1,8 +1,9 @@
 @import "src/styles.scss";
 
 header {
-    background-color: $color-azul-oscuro;
+    background: linear-gradient(90deg,$color-morado,$color-rosa);
     padding: 15px 0;
+    height: 9vh;
     .header-container {
         display: flex;
         justify-content: space-between;
@@ -16,12 +17,12 @@ header {
         }
         nav {
             a {
-                color: $color-beige-claro;
+                color: $color-gris;
                 text-decoration: none;
                 margin-left: 50px;
                 font-size: 18px;
                 &:hover {
-                    color: $color-beige-oscuro;
+                    color: $color-morado;
                 }
             }
         }

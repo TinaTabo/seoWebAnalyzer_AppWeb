@@ -11,12 +11,34 @@
         width: 350px;
         height: 35px;
         padding: 0.5em;
+        border: none;
         border-radius: 5px;
+        background-color: $color-blanco;
+        color: $color-morado;
+        box-shadow: 0px 2px 12px 0px $color-morado;
+        transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+        font-family: $font-nunito;
+        font-size: 14px;
+
+        &::placeholder {
+            color: $color-rosa;
+            opacity: 0.5;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0px 2px 14px 0px $color-rosa;
+            transform: scale(1.01);
+        }
+
+        &:hover {
+            box-shadow: 0px 2px 14px 0px $color-morado;
+        }
     }
 
     .analyze-button {
         height: 35px;
-        background-color: $color-azul-oscuro;
+        background-color: $color-morado;
         color: $color-blanco;
         border: none;
         border-radius: 5px;
@@ -29,13 +51,13 @@
         }
 
         &:hover {
-            background-color: darken($color-azul-oscuro, 10%);
+            background-color: darken($color-rosa, 10%);
         }
     }
 }
 
 .analysis-message {
-    color: green;
+    color: $color-rosa;
     margin-left: 10px;
     font-size: 18px;
 }

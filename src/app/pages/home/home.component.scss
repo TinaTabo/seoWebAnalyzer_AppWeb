@@ -5,22 +5,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 9vh - 5vh);
     width: 100%;
     padding: 3em;
-    background-color: $color-beige-claro;
+    background-color: $color-blanco;
     box-sizing: border-box;
     text-align: center;
 
     h1 {
-        font-size: 2em;
-        color: $color-azul-oscuro;
-        margin-bottom: 1em;
+        font-size: 40px;
+        color: $color-rosa;
+        margin-bottom: 30px;
     }
 
     p {
-        font-size: 1.2em;
-        color: $color-azul-oscuro;
-        margin-bottom: 2em;
+        font-size: 20px;
+        color: $color-morado;
+        margin-bottom: 30px;
     }
 }

@@ -1,11 +1,12 @@
 @import '../../../styles.scss';
 
 .footer {
-    background-color: $color-azul-oscuro;
+    background-color: $color-morado;
     padding: 10px;
     padding-right: 30px;
     color: $color-blanco;
     width: 100%;
+    height: 5vh;
     bottom: 0;
 }
 
