@@ -6,31 +6,36 @@
     align-items: center;
     padding: 1em;
     gap: 5px;
-}
 
-.url-input {
-    width: 350px;
-    height: 35px;
-    padding: 0.5em;
-    border-radius: 5px;
-}
-
-.analyze-button {
-    height: 35px;
-    background-color: $color-azul-oscuro;
-    color: $color-blanco;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5em 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    i {
-        margin-right: 0.5em;
+    .url-input {
+        width: 350px;
+        height: 35px;
+        padding: 0.5em;
+        border-radius: 5px;
     }
 
-    &:hover {
-        background-color: darken($color-azul-oscuro, 10%);
+    .analyze-button {
+        height: 35px;
+        background-color: $color-azul-oscuro;
+        color: $color-blanco;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5em 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        i {
+            margin-right: 0.5em;
+        }
+
+        &:hover {
+            background-color: darken($color-azul-oscuro, 10%);
+        }
     }
 }
 
+.analysis-message {
+    color: green;
+    margin-left: 10px;
+    font-size: 18px;
+}

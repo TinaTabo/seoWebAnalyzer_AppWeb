@@ -13,10 +13,15 @@ import { PostAnalysisResponse } from 'src/app/models/post-analysis-response';
 export class BrowserComponent {
   //-- Variable para guardar la url de entrada.
   url: string = '';
+  //-- Variable para controlar si se está analizando una URL.
+  isAnalyzing = false;
 
   constructor(private analyzerService: AnalyzerService, public router: Router, private datePipe: DatePipe){}
 
   analyze():void{
+    //-- Comienza el análisis.
+    this.isAnalyzing = true;
+
     this.analyzerService.postAnalysis(this.url).subscribe((data: PostAnalysisResponse)=>{
       this.analyzerService.analysis = {...data};
 
@@ -25,6 +30,8 @@ export class BrowserComponent {
         let newAnalysis: GetAnalysisResponse = new GetAnalysisResponse(data.id,data.url,formattedDate);
         this.analyzerService.items.unshift(newAnalysis);
       }
+      //-- Termina el análisis.
+      this.isAnalyzing = false;
       this.router.navigateByUrl('/analisis');
     });
   }
