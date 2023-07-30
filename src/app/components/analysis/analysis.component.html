@@ -4,14 +4,14 @@
         <p class="analysis-url"><strong>URL:</strong> {{analyzerService.analysis.url}}</p>
         <p class="analysis-title"><strong>Título:</strong> {{analyzerService.analysis.title}}</p>
         <p class="analysis-description"><strong>Descripción:</strong>
-            <span *ngIf="analyzerService.analysis.description; else noDescription">{{analyzerService.analysis.description}}</span>
+            <span *ngIf="analyzerService.analysis.description; else noDescription"> {{analyzerService.analysis.description}}</span>
             <ng-template #noDescription>
                 <span> No hay descripción disponible.</span>
             </ng-template>
         </p>
         <p class="analysis-keywords">
             <strong>Palabras clave:</strong>
-            <span *ngIf="analyzerService.analysis.keywords != []; else noKeywords">{{analyzerService.analysis.keywords.join(', ')}}</span>
+            <span *ngIf="analyzerService.analysis.keywords && analyzerService.analysis.keywords.length > 1; else noKeywords"> {{analyzerService.analysis.keywords.join(', ')}}</span>
             <ng-template #noKeywords>
                 <span> No hay palabras clave disponibles.</span>
             </ng-template>
@@ -19,7 +19,7 @@
 
         <div class="analysis-headings">
             <strong>Encabezados:</strong>
-            <ul *ngIf="transformedTitles && transformedTitles.length > 0; else noHeadings">
+            <ul *ngIf="transformedTitles && transformedTitles.length > 1; else noHeadings">
                 <li *ngFor="let title of transformedTitles">
                     <strong>{{title.key.toUpperCase()}}:</strong> {{title.value}}
                 </li>
