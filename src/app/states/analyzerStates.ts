@@ -4,6 +4,10 @@ import { Action, State, StateContext } from '@ngxs/store'; //-- Elemento clave d
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { PostAnalysisResponse } from '../models/post-analysis-response';
+import { GetAnalysisResponse } from '../models/get-analysis-response';
+
+
+//-- Estados del componente Browser --
 
 //-- Definición de acción, que será utilizada por NGXS para alterar el estado.
 export class SetAnalysis {
@@ -35,5 +39,52 @@ export class AnalysisState {
                 ctx.setState(data);
             })
         );
+    }
+}
+
+
+
+//-- Estados del componente History
+
+//-- Acción para obtener el historial
+export class GetHistory{
+    static readonly type = '[History] Get';
+    constructor(public limit: number){}
+}
+
+//-- Acción para eliminar un análisis
+export class DeleteHistory {
+    static readonly type = '[History] Delete';
+    constructor(public id: number) {}
+}
+
+
+//-- Estado
+@State<GetAnalysisResponse[]>({
+    name: 'history',
+    defaults: []
+})
+@Injectable()
+
+//-- Peticiones HTTP
+export class HistoryState {
+    private url = "http://localhost:8080/analisis";
+
+    constructor(private http: HttpClient) {}
+
+    @Action(GetHistory)
+    getHistory(ctx: StateContext<GetAnalysisResponse[]>, action: GetHistory): Observable<any> {
+        return this.http.get<GetAnalysisResponse[]>(`${this.url}?limit=${action.limit}`).pipe(
+            tap((data: GetAnalysisResponse[]) => {
+                ctx.setState(data);
+            })
+        );
+    }
+
+    @Action(DeleteHistory)
+    deleteHistory(ctx: StateContext<GetAnalysisResponse[]>, action: DeleteHistory) {
+        const state = ctx.getState();
+        ctx.setState(state.filter(item => item.id !== action.id));
+        return this.http.request('delete', this.url + "/" + action.id);
     }
 }

@@ -1,17 +1,17 @@
 <div class="report">
     <h2 class="report-title">Informe del Análisis</h2>
     <div class="analysis">
-        <p class="analysis-url"><strong>URL:</strong> {{analyzerService.analysis.url}}</p>
-        <p class="analysis-title"><strong>Título:</strong> {{analyzerService.analysis.title}}</p>
+        <p class="analysis-url"><strong>URL:</strong> {{currentAnalysis.url}}</p>
+        <p class="analysis-title"><strong>Título:</strong> {{currentAnalysis.title}}</p>
         <p class="analysis-description"><strong>Descripción:</strong>
-            <span *ngIf="analyzerService.analysis.description; else noDescription">{{analyzerService.analysis.description}}</span>
+            <span *ngIf="currentAnalysis.description; else noDescription">{{currentAnalysis.description}}</span>
             <ng-template #noDescription>
                 <span> No hay descripción disponible.</span>
             </ng-template>
         </p>
         <p class="analysis-keywords">
             <strong>Palabras clave:</strong>
-            <span *ngIf="analyzerService.analysis.keywords && analyzerService.analysis.keywords == []; else noKeywords">{{analyzerService.analysis.keywords.join(', ')}}</span>
+            <span *ngIf="currentAnalysis.keywords && currentAnalysis.keywords.length > 0; else noKeywords">{{currentAnalysis.keywords.join(', ')}}</span>
             <ng-template #noKeywords>
                 <span> No hay palabras clave disponibles.</span>
             </ng-template>
@@ -29,10 +29,11 @@
             </ng-template>
         </div>
 
-        <p class="analysis-html5"><strong>¿Utiliza HTML5?:</strong> {{analyzerService.analysis.html5 ? 'Sí' : 'No'}}</p>
-        <p class="analysis-images"><strong>Número de imágenes:</strong> {{analyzerService.analysis.images}}</p>
-        <p class="analysis-created"><strong>Fecha del análisis:</strong> {{analyzerService.analysis.createdAt | date:'dd/MM/yyyy HH:mm'}}</p>
-        <button class="analysis-delete" (click)="deleteAnalysis(analyzerService.analysis.id)">
+        <p class="analysis-html5"><strong>¿Utiliza HTML5?:</strong> {{currentAnalysis.html5 ? 'Sí' : 'No'}}</p>
+        <p class="analysis-images"><strong>Número de imágenes:</strong> {{currentAnalysis.images}}</p>
+        <p class="analysis-created"><strong>Fecha del análisis:</strong> {{currentAnalysis.createdAt | date:'dd/MM/yyyy HH:mm'}}</p>
+        <button class="analysis-delete" (click)="deleteAnalysis(currentAnalysis.id)">
             <i class="fas fa-trash-alt"></i>
         </button>
+    </div>
 </div>
