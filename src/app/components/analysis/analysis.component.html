@@ -11,7 +11,7 @@
         </p>
         <p class="analysis-keywords">
             <strong>Palabras clave:</strong>
-            <span *ngIf="analyzerService.analysis.keywords && analyzerService.analysis.keywords == []; else noKeywords">{{analyzerService.analysis.keywords.join(', ')}}</span>
+            <span *ngIf="analyzerService.analysis.keywords != []; else noKeywords">{{analyzerService.analysis.keywords.join(', ')}}</span>
             <ng-template #noKeywords>
                 <span> No hay palabras clave disponibles.</span>
             </ng-template>
